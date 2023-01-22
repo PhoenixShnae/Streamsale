@@ -1,17 +1,29 @@
+import { getCurrentInstance, version, defineComponent, h, inject, computed, unref, Suspense, nextTick, Transition, provide, reactive, ref, resolveComponent, shallowRef, useSSRContext, createApp, toRef, isRef, defineAsyncComponent, onErrorCaptured, withCtx, createVNode } from 'vue';
+import { $fetch } from 'ofetch';
+import { createHooks } from 'hookable';
+import { getContext, executeAsync } from 'unctx';
+import { hasProtocol, isEqual, parseURL, joinURL } from 'ufo';
+import { createError as createError$1, sendRedirect } from 'h3';
+import { useHead, createHead as createHead$1 } from '@unhead/vue';
+import { renderDOMHead, debouncedRenderDOMHead } from '@unhead/dom';
+import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter } from 'vue-router';
+import { ssrRenderSuspense, ssrRenderComponent } from 'vue/server-renderer';
+import { defu } from 'defu';
+import { a as useRuntimeConfig$1 } from './node-server.mjs';
+import 'node-fetch-native/polyfill';
+import 'http';
+import 'https';
+import 'destr';
+import 'unenv/runtime/fetch/index';
+import 'scule';
+import 'ohash';
+import 'unstorage';
+import 'radix3';
+import 'node:fs';
+import 'node:url';
+import 'pathe';
+
 var _a, _b, _c, _d;
-import { getCurrentInstance, reactive, toRef, isRef, inject, defineComponent, computed, ref, h, resolveComponent, version, nextTick, shallowRef, unref, Transition, Suspense, provide, useSSRContext, withCtx, createVNode, defineAsyncComponent, onErrorCaptured, createApp } from "vue";
-import { $fetch } from "ofetch";
-import { useRuntimeConfig as useRuntimeConfig$1 } from "#internal/nitro";
-import { createHooks } from "hookable";
-import { getContext, executeAsync } from "unctx";
-import "destr";
-import { hasProtocol, parseURL, joinURL, isEqual } from "ufo";
-import { createError as createError$1, sendRedirect } from "h3";
-import { createHead as createHead$1, useHead } from "@unhead/vue";
-import { renderDOMHead, debouncedRenderDOMHead } from "@unhead/dom";
-import { createMemoryHistory, createRouter, useRoute as useRoute$1, RouterView } from "vue-router";
-import { ssrRenderComponent, ssrRenderSuspense } from "vue/server-renderer";
-import { defu } from "defu";
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
 const nuxtAppCtx = getContext("nuxt-app");
@@ -499,7 +511,7 @@ const node_modules_nuxt_dist_head_runtime_lib_vueuse_head_plugin_mjs_D7WGfuP1A0 
   nuxtApp._useHead = useHead;
   {
     nuxtApp.ssrContext.renderMeta = async () => {
-      const { renderSSRHead } = await import("@unhead/ssr");
+      const { renderSSRHead } = await import('@unhead/ssr');
       const meta = await renderSSRHead(head.unhead);
       return {
         ...meta,
@@ -520,7 +532,7 @@ const _routes = [
     meta: __nuxt_page_meta$1,
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import("./_nuxt/index.5ef79bf8.js").then((m) => m.default || m)
+    component: () => import('./index.5ef79bf8.mjs').then((m) => m.default || m)
   },
   {
     name: (_c = __nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) != null ? _c : "player-_name",
@@ -530,7 +542,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import("./_nuxt/_name.e3b8d36e.js").then((m) => m.default || m)
+    component: () => import('./_name.e3b8d36e.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -749,7 +761,7 @@ const _wrapIf = (component, props, slots) => {
   return { default: () => props ? h(component, props === true ? {} : props, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import("./_nuxt/default.d3159e50.js").then((m) => m.default || m)
+  default: () => import('./default.d3159e50.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = defineComponent({
   props: {
@@ -926,7 +938,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import("./_nuxt/error-component.de5e756e.js").then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./error-component.de5e756e.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());
@@ -980,10 +992,6 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
-export {
-  _export_sfc as _,
-  __nuxt_component_0$1 as a,
-  entry$1 as default,
-  useNuxtApp as u
-};
+
+export { _export_sfc as _, __nuxt_component_0$1 as a, entry$1 as default, useNuxtApp as u };
 //# sourceMappingURL=server.mjs.map
