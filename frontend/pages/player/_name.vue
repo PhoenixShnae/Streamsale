@@ -1,3 +1,4 @@
+
 <template>
     <div class="player">
         <video controls muted autoPlay crossOrigin="anonymous">
