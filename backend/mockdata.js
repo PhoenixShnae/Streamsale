@@ -1,7 +1,19 @@
 const allVideos = [
     {
+        id: "tom and jerry",
+        poster: "C:\Users\phoen\Downloads\Balthasar.png",
+        duration: '3 mins',
+        name: 'Tom & Jerry'
+    },
+    {
+        id: "soul",
+        poster: "C:\Users\phoen\Downloads\Balthasar.png",
+        duration: '4 mins',
+        name: 'Soul'
+    },
+    {
         id: "outside the wire",
-        poster: 'https://image.tmdb.org/t/p/w500/lOSdUkGQmbAl5JQ3QoHqBZUbZhC.jpg',
+        poster: "C:\Users\phoen\Downloads\Balthasar.png",
         duration: '2 mins',
         name: 'Outside the wire'
     },

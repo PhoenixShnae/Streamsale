@@ -1,10 +1,11 @@
 <template>
     <div class="player">
-        <video controls muted autoPlay>
-            <source :src="`https://localhost:5000/videos/video/${vidName}`" type="video/mp4">
+        <video controls muted autoPlay crossOrigin="anonymous">
+            <source :src="`http://localhost:5000/videos/video/${vidName}`" type="video/mp4">
         </video>
     </div>
 </template>
+
 <script>
 export default {
  data() {
@@ -18,7 +19,7 @@ mounted(){
 }
 </script>
 <style scoped>
-.player {
+.player{
     display: flex;
     justify-content: center;
     align-items: center;
