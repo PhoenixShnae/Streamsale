@@ -1,7 +1,7 @@
 const allVideos = [
     {
         id: "tom and jerry",
-        poster: "C:\Users\phoen\Downloads\Balthasar.png",
+        poster: "\Sword-CA.jpg",
         duration: '3 mins',
         name: 'Tom & Jerry'
     },

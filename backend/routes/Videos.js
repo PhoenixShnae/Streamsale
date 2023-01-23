@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const videos = require('../mockdata')
-const fs = require('fs');
+const fs = require('fs')
+
 // get list of videos
 router.get('/', (req,res)=>{
     res.json(videos)
@@ -11,6 +12,7 @@ router.get('/:id/data',(req,res)=>{
     const id=parseInt(req.params.id,10)
     res.json(videos[id])
 })
+
 router.get('/video/:id', (req, res) => {
     const videoPath = `assets/${req.params.id}.mp4`;
     const videoStat = fs.statSync(videoPath);
