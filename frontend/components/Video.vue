@@ -1,3 +1,9 @@
+<script>
+export default {
+    props:['videoList'],
+}
+</script>
+
 <template>
 <div>
   <div class="container">
@@ -25,11 +31,7 @@
 </div>
 </template>
 
-<script>
-export default {
-    props:['videoList'],
-}
-</script>
+
 <style scoped>
 .container{
   display: flex;
