@@ -1,11 +1,12 @@
 <template>
     <div class="navbar">
-        <h1>Streaming Sale</h1>
+        <h1>Streaming App</h1>
     </div>
 </template>
+
 <style scoped>
-.navbar {
-    display: flex;
+.navbar{
+    display:flex;
     background-color: #161616;
     justify-content: center;
     align-items: center;
