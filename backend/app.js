@@ -6,7 +6,7 @@ const app = express(); //creates express app
 app.use(cors())
 
 //videos route
-const Videos = require('./routes/Video')
+const Videos = require('./routes/Videos')
 app.use('/videos', Videos)
 
 //function to set listening port
