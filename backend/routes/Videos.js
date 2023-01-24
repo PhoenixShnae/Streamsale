@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const videos = require('../mockdata')
+const videos = require('../mockData')
 const fs = require('fs')
 
 // get list of videos
